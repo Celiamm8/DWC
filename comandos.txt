@@ -1,0 +1,9 @@
+Pasos a seguir para subir archivos a git;
+
+ C://> cd url    te cambias a la ruta donde tengas la carpeta de git de subida.
+		D:\\CarpetadeSubidax> git status
+		D:\\CarpetadeSubidax> git add .
+		D:\\CarpetadeSubidax> git commit -m ""
+		D:\\CarpetadeSubidax> git pull
+		D:\\CarpetadeSubidax> git push
+		D:\\CarpetadeSubidax> git status
