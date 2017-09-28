@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <script type="text/javascript">
+
+       function rebaja(porcentaje,precio){
+         var preciodesc = (precio*porcentaje)/100;
+         var precioFinal = (precio - preciodesc);
+         document.write("<p> el precio final " + precioFinal +"</p>");
+
+
+       }
+       var pre = prompt("Introduce un precio");
+       var precInt = parseInt(pre);
+       var porc =prompt("Introduce un porcentaje");
+       var porcInt = parseInt(porc);
+
+       if( precInt <=0  || typeof(precInt) != "number"){
+
+         alert("No es válido este número");
+
+       }else if(porcInt <=0 || typeof(porcInt) != "number"){
+           alert("No es válido este porcentaje");
+
+       }else
+        rebaja(precInt,porcInt);
+
+
+      </script>
+
+  </body>
+</html>
