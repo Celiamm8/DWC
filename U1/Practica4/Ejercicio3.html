@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Ejercicio 3</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+       var edad = prompt("Introduce la edad");
+
+
+          function mayorEdad(numero){
+            var numeroN = parseInt(numero);
+         if(numeroN >=18){
+            return ("<p> <li>Coca Cola,3€ <li> Cafe,5€ <li>Martini,9€ <li>Whisky,20€ </p>");
+         }else {
+           return ("<p><li>Coca Cola,3€ <li> Cafe,5€ </p>")
+         }
+
+         }
+
+
+    mayorEdad(edad);
+    var salida = mayorEdad(edad);
+    document.write(salida);
+    </script>
+
+  </body>
+</html>

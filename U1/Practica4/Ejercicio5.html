@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Ejercicio 5</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var operador = prompt("Introduce una operacion");
+
+
+
+      var cal = eval(operador);
+      alert("el resultado de la operación es: " + cal);
+       if(isFinite(cal) || typeof(cal) != "number" ){
+
+          console.log("ERROR");
+
+       }
+    </script>
+
+  </body>
+</html>

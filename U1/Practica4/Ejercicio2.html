@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Ejercicio 2</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+         var edad = prompt("introduce tu edad") || 18; // se le añade || numero es para decir que por defecto salga.
+               
+          function mayorEdad(n){
+            var nNumero = parseInt(n); // simpre que queramos pasar de un string a un numero entero
+                if (isNaN(nNumero)) {
+                  console.log("error")
+                }else {
+
+                 if (n>=18) {
+
+                   return "si"; //Toda función viene contenida por un return
+
+                 } else {
+                    return "no";
+
+                        }
+                  }
+
+      }
+        mayorEdad(edad);//Cuando hacemos una función se le llama para que salga por pantalla
+          var salida = mayorEdad(edad);
+            document.write(salida);
+
+    </script>
+
+  </body>
+</html>

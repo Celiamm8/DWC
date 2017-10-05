@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Ejercici 7</title>
+  </head>
+  <body>
+      <script type="text/javascript">
+       var diaSemana= ["lunes","Martes","miercoles","jueves","viernes",
+                        "sabado","Domingo"];
+        for (var i in diaSemana){
+          console.log(diaSemana[i]);
+        }
+        var n = prompt ("Introduce el dia de la semana") || 4;
+        function nSemana(){
+
+            if( n >=1 && n<=7){
+                 document.write("<p> El dia de la semana es: " +diaSemana[n-1]+ "</p>");
+            }else if(isFinite(n) || typeof(n) != "number"){
+               document.write("Error");
+            }
+
+        }
+
+        nSemana(diaSemana);
+
+      </script>
+
+  </body>
+</html>

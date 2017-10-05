@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var c1 = "Hello";
+      var c2 = "goodbye";
+       function cadena(cadena1 , cadena2){
+         if( typeof(cadena1) !== "string" || typeof(cadena2) !== "string"){
+           console.log("Esto es un Error");
+         }if(cadena1.length>cadena2.lenth){ // mira cual es la longitud mas larga
+           console.log(c1);
+         }else {
+           console.log(c2);
+         }
+       }
+
+       cadena(c1,c2); //hace la llamada de las variables primeras
+
+       c1="Pedro";
+       c2="cuadro";
+       cadena(c1,c2);
+
+       c1 =15;
+       c2 = "Andres";
+       cadena(c1,c2);
+
+
+
+
+
+    </script>
+
+  </body>
+</html>
