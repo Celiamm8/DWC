@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Kiosko</title>
+    <style media="screen">
+       h2{
+          text-align: center;
+       }
+       img{
+         margin:auto;
+         display: block;
+
+       }
+       table{
+
+         margin:auto;
+         display: block;
+       }
+    </style>
+  </head>
+  <body>
+       <h2>¿Quieres conocer nuestro surtido?</h2>
+              <h2>Pulsa sobre la imagen</h2>
+
+     <script type="text/javascript">
+           document.write('<img src="kiosko.png" alt="kiosko" onClick="mostrarSurtidoPrecio(s)">');
+          function generaSurtido(){
+             var p = ["revistas","chuches","frutosSecos","palomitas","kikos","tabaco","mecheros","refrescos"]
+
+             return p;
+           }
+
+          function consultaPrecios(i){
+             var precios = ['2.75','1.25','3.25','1.5','0.75','4.75','1','2.75'];
+             return precios[i];
+          }
+
+          function mostrarSurtidoPrecio(p){
+              document.write("<table>");
+
+            for(var i=0; i< p.length; i++ ){
+               document.write("<td>"+'<img width="140px" src="'+p[i]+'.png" alt="'+p[i]+'">'+"</td>");
+             }
+              document.write("<tr>");
+
+             for(var i=0; i<p.length ; i++){
+                if(consultaPrecios(i)>0){
+               document.write('<td>'+'<div align="center">'+consultaPrecios(i)+"€"+'</div>'+'</td>');
+             }
+          }
+          document.write("</tr> </table>");
+        }
+
+          var s = generaSurtido();
+          //  mostrarSurtidoPrecio(generaSurtido(s));
+
+
+     </script>
+
+  </body>
+</html>
