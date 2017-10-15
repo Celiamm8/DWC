@@ -9,21 +9,39 @@
 
        var edad = prompt("Introduce la edad");
 
+       function mayorEdad(n){
+         var nNumero = parseInt(n); // siempre que queramos pasar de un string a un numero entero
+             if (isNaN(nNumero)) {
+               console.log("error")
+             }else {
 
-          function mayorEdad(numero){
-            var numeroN = parseInt(numero);
-         if(numeroN >=18){
-            return ("<p> <li>Coca Cola,3€ <li> Cafe,5€ <li>Martini,9€ <li>Whisky,20€ </p>");
-         }else {
-           return ("<p><li>Coca Cola,3€ <li> Cafe,5€ </p>")
-         }
+              if (n>=18) {
 
-         }
+                document.write("<p> <li>Coca Cola,3€ <li> Cafe,5€ <li>Martini,9€ <li>Whisky,20€ </p>");
+                return "SI, "; //Toda función viene contenida por un return
+
+              } else {
+                document.write(" <p><li>Coca Cola,3€ <li> Cafe,5€ </p>");
+                 return "NO ";
+
+                     }
+               }
+             }
+
+
+        //   function mayorEdad(numero){
+        //     var numeroN = parseInt(numero);
+        //  if(numeroN >=18){
+        //     return ();
+        //  }else {
+        //    return ("")
+        //  }
+         //
+        //  }
 
 
     mayorEdad(edad);
-    var salida = mayorEdad(edad);
-    document.write(salida);
+  
     </script>
 
   </body>
