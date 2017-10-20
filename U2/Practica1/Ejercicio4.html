@@ -14,13 +14,13 @@
          this.nombre=nombre||"Anonymus";
          this.apellidos =apellidos ;
          this.saludo = function(){
-        document.write("<p>Hola me llamo" + this.nombre + this.apellido+"</p>" );
+        document.write("<p>Hola me llamo: " + this.nombre + this.apellidos+"</p>" );
 
          }
        }
-         var per2 = new persona("Celia", "De la Morena");
+         var per2 = new persona("Celia ", "Morena");
          per2.saludo();
-         var per3 = new persona ("Carlos  " , "Gonzalez");
+         var per3 = new persona ("Carlos " , "Gonzalez");
          per3.saludo();
 
          console.log("persona2 es instancia de persona" + (per2 instanceof persona));
