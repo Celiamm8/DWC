@@ -13,14 +13,25 @@
             coche.color = "rojo";
 
             coche.pinta = function(){
-              coche.color = "white";
+              color = "white";
             }
 
-            coche.año = "2004";
-            coche.tipo = "gasolina";
+            var coche2 = new Object();
+              coche.marca = "Mercedes";
+              coche.ruedas = "4";
+              coche.plazas = "5";
+              coche.color = "rojo";
+              coche2.pinta = function(){
+                color = "white";
+              }
+
+
+
+
             delete coche.plazas;
 
           console.log(Object.keys(coche));
+          console.log(Object.keys(coche2));
 
      </script>
   </body>

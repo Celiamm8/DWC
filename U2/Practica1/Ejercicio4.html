@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+
+       function persona (nombre,apellidos){
+
+         this.nombre=nombre||"Anonymus";
+         this.apellidos =apellidos ;
+         this.saludo = function(){
+        document.write("<p>Hola me llamo" + this.nombre + this.apellido+"</p>" );
+
+         }
+       }
+         var per2 = new persona("Celia", "De la Morena");
+         per2.saludo();
+         var per3 = new persona ("Carlos  " , "Gonzalez");
+         per3.saludo();
+
+         console.log("persona2 es instancia de persona" + (per2 instanceof persona));
+         console.log("persona3 es instancia de persona" + (per3 instanceof persona));
+
+          console.log(Object.keys(per2));
+          console.log(Object.keys(per3));
+
+
+
+
+    </script>
+
+  </body>
+</html>

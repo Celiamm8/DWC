@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    function Persona (nombre,apellidos){
+
+      this.nombre=nombre||"Anonymus";
+      this.apellidos = apellidos ;
+      this.saludo = function(){
+     document.write("<p>Hola me llamo : " + this.nombre + this.apellidos+"</p>" );
+
+      }
+
+      }
+                // Esto es del Ejercicio 5 añadir edad y la funcion cumplirAnyo con prototype( sirve para modificar o añadir atributos al objeto)
+            Persona.prototype.edad = Math.floor(Math.random()*100) - 1;
+            Persona.prototype.cumplirAnyo = function (){
+              this.edad = this.edad + 1;
+
+    }
+      var per2 = new Persona("Celia", "Morena Mora");
+      per2.saludo();
+      var per3 = new Persona ("Carlos  " , "Gonzalez Ruiz");
+      per3.telefono = " 692904757"; // Esto es añair telefono a unos de los objetos creados de personas
+      per3.saludo();
+
+      console.log("La edad de la persona con Math: " + per2.edad); // Saco por pantalla el nuevo atributo edad
+       per2.cumplirAnyo();
+       console.log("Edad de la persona sumando 1: " + per2.edad);
+
+      console.log("persona2 es instancia de persona : " + (per2 instanceof Persona));
+      console.log("persona3 es instancia de persona : " + (per3 instanceof Persona));
+
+       console.log(Object.keys(per2));
+       console.log(Object.keys(per3));
+
+       // crear un constructor llamado estudiante
+
+          function Estudiante(nombre,apellidos,notaMedia,estudios){
+               Persona.call(this,nombre,apellidos); // esto es para llamar al objeto persona y sus atributos correspondientes.
+               this.estudios =  estudios ; // le pasamos los parametros
+               this.notaMedia = notaMedia;
+                 this.Recuperar = function(){ // incorporamos el metedo Recuperar
+
+                   if (this.notaMedia < 5) {
+
+                     this.notaMedia = 5;
+
+                   }
+
+                 }
+              }
+
+
+
+              var not1 = prompt(" Escribre la nota del primer estudiante : ");
+              var not2 = prompt(" Escribre la nota del segundo estudiante : "); // le decimos al usuarios que introduzca las notas
+              var not3 = prompt(" Escribre la nota del tercer estudiante : ");
+
+              not1 = parseFloat(not1);
+              console.log(not1);
+              not2 = parseInt(not2); // el prompt por defecto es un string, lo pasamos a numero entero
+              not3 = parseInt(not3);
+                           // creamos cada estudiante  y escribimos igual q el orden de los paramatros pasado en el constructor
+                           var lista = new Array (3);
+              var estudiante1 = new Estudiante ("Celia" , "Morena Mora" ,  not1 , " 2ºDAW" );
+              var estudiante2 = new Estudiante("Carlos" , "Gonzalez Ruiz" , not2, "Economicas" );
+              var estudiante3 = new Estudiante ("Andres", "Mendoza Aguilar", not3 , "Biomedicina" );
+
+              // sacamos por consola la nota redondeada, y recuperada de solo un estudiante
+
+              console.log("La nota media del primer estudiante es: " + estudiante1.notaMedia);
+              estudiante1.notaMedia = estudiante1.notaMedia.toFixed(2);
+              console.log("La nota media redondeada del  estudiante es: " + estudiante1.notaMedia);
+              estudiante1.Recuperar();
+              console.log("La nota media recuperada del estudiante es: " + estudiante1.notaMedia);
+
+             //  creamos el array de los tres estudiantes
+
+              lista[0] = estudiante1;
+              lista[1] = estudiante2;
+              lista[2] = estudiante3;
+                    // hacemos un bicleo for para enseñar todo los atributos de cada alumnos
+              for (var i = 0; i < lista.length; i++) {
+  console.log( " nombre " + lista[i].nombre + " apellidos " + lista[i].apellidos + " Nota Media " + lista[i].notaMedia + " Estudios " + lista[i].estudios);
+            }
+
+            //Ejercicio 9
+
+          var apellidos;
+
+          for (var i = 0; i < 3; i++) {
+            apellidos =lista[i].apellidos.split(" "); // con split lo que queremos hacer es separar los apellidos
+
+            document.write("<br> Nombre: " + lista[i].nombre + " <br>Primer Apellido: " + apellidos[0] + " <br>Segundo Apellido: " + apellidos[1]);
+          }
+
+
+            // ejercicio 10
+
+            Estudiante.prototype.password = " ";
+            Estudiante.prototype.crearPassword = function (){ // creamos el metedo
+              var ctña = " " ;
+              ctña = this.nombre.charAt (0); // primera letra en mayuscula
+              var apellidos = this.apellidos.split( " ");
+              var letra = apellidos[0].toLowerCase(); // el numero de letras
+
+              while(letra.search("e") >=0 || letra.search("a") >= 0){
+                // remplazamos las letras por los numeros
+                  letra = letra.replace("e","3");
+                    letra = letra.replace ("a","4");
+
+              }
+
+
+              letra = letra.concat(this.nombre.length);
+              ctña = ctña.concat(letra);
+              return ctña;
+                }
+
+          for (var i = 0; i < 3 ; i++) {
+            lista[i].ctña = lista[i].crearPassword();
+               document.write("<br> La contraseña es: " + lista[i].ctña );
+
+
+              }
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

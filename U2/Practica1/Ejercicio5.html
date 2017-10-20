@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Persona (nombre,apellidos){
+
+      this.nombre=nombre||"Anonymus";
+      this.apellidos = apellidos ;
+      this.saludo = function(){
+     document.write("<p>Hola me llamo : " + this.nombre + this.apellidos+"</p>" );
+
+      }
+
+      }
+                // Esto es del Ejercicio 5 añadir edad y la funcion cumplirAnyo con prototype
+            Persona.prototype.edad = Math.floor(Math.random()*100) - 1;
+            Persona.prototype.cumplirAnyo = function (){
+              this.edad = this.edad + 1;
+
+    }
+      var per2 = new Persona("Celia", "De la Morena");
+      per2.saludo();
+      var per3 = new Persona ("Carlos  " , "Gonzalez");
+      per3.telefono = " 692904757"; // Esto es añair telefono a unos de los objetos creados de personas
+      per3.saludo();
+
+      console.log("La edad de la persona con Math: " + per2.edad); // Saco por pantalla el nuevo atributo edad
+       per2.cumplirAnyo();
+       console.log("Edad de la persona sumando 1: " + per2.edad);
+
+      console.log("persona2 es instancia de persona : " + (per2 instanceof Persona));
+      console.log("persona3 es instancia de persona : " + (per3 instanceof Persona));
+
+       console.log(Object.keys(per2));
+       console.log(Object.keys(per3));
+
+
+
+
+    </script>
+
+  </body>
+</html>
