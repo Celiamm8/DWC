@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function Estudiante(nombre,apellidos,notaMedia,estudios){
+        //  Persona.call(this,nombre,apellidos); // esto es para llamar al objeto persona y sus atributos correspondientes.
+         this.estudios =  estudios ; // le pasamos los parametros
+         this.notaMedia = notaMedia;
+           this.Recuperar = function(){ // incorporamos el metedo Recuperar
+
+             if (this.notaMedia < 5) {
+
+               this.notaMedia = 5;
+
+             }
+
+           }
+         }
+    var est = new Array (3);
+  est[0]= new Estudiante ("Celia" , "De la Morena Mora" ,  8 , " 2ºDAW" );
+   est[1]= new Estudiante("Carlos" , "Gonzalez Ruiz" , 6, "Economicas" );
+  est[2]= new Estudiante ("Andres", "Mendoza Aguilar", 9 , "Biomedicina" );
+
+
+      Estudiante.sort(function(p1,p2){
+        return p1.notaMedia - p2.notaMedia;
+      });
+      console.log(Estudiante.toString());
+
+    </script>
+
+  </body>
+</html>

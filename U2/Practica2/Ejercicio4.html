@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 3</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+        var c = ["ele1", "Ele2", "Ele3", " Ele4"];
+        c.push(13);
+        c.push(8);// añades los elementos atras
+        c.unshift(45);
+        c.unshift(32); //añades los elementos delante
+
+        console.log(c.toString());
+          c.splice(2,3);
+        console.log(c.toString());
+        c.splice(c.length -1, 0, 10, 25);
+        console.log(c.toString());
+        console.log(c.join(" ==> "));
+
+         var p = c.reverse();
+         console.log(p);
+         console.log(c);
+         console.log(c.indexOf(25));
+         console.log(c.indexOf(450));
+
+         console.log("Todos son de tipo number " + c.every(function(a){return Number(a);}))
+         console.log("Algunos de los elementos del array son menor de 20: " + c.some(function(c) { return c < 20; }));
+         var a = [4, 21, 33, 12, 9, 54];
+         console.log(" la suma del array: " + a.reduce(function(total,a){ return total + a;}));
+
+
+
+    </script>
+
+  </body>
+</html>
