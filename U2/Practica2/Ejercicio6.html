@@ -9,12 +9,17 @@
 
        var array = [2,5,"celia", "andres",true];
        console.log(array);
-        console.log(array.map(Math.sqrt));
-       function ordenar () {
+        console.log(array.map(function(n){
+          return n;
+        }));
 
-         console.log(array.filter(ordenar));
-         
-       }
+
+
+         console.log(array.filter(function(n){
+            return n;
+         }));
+
+
 
 
 
