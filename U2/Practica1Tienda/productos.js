@@ -40,5 +40,22 @@ var productos = [
     foto:'https://media2.ocu.org//images/CE9E19F522012DD79E635A40B861F4F8C3DAB876/w150-c4/hf31300041604001.jpg',
     precio: 5.30,
     vegano: true
-  }
+  },
+  
+  {
+  nombre:'Zumo De Naranja',
+  descripcion: 'Zumo de naranja recien exprimido',
+  foto:'http://valenciabonita.es/wp-content/uploads/2015/10/6a00d8341bfb1653ef0177445c1bc4970d.jpg',
+  precio: 1.75,
+  vegano: true
+},
+
+{
+nombre:'Botella de Agua',
+descripcion: 'Botella de agua de 2L',
+foto:'http://www.mas-masia.com/wp-content/uploads/2016/03/botella-agua.jpg',
+precio: 0.50,
+vegano: true
+ }
+
 ];

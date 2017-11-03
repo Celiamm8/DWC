@@ -1,3 +1,5 @@
+'use strict'
+
 function ordenarMenos(p1,p2){
   return p1.precio - p2.precio;
 }
