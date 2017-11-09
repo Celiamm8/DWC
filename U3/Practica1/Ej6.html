@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6</title>
+    <meta charset="utf-8">
+<title>Crea elementos del DOM</title>
+<script type="text/javascript">
+
+  onload = function creaDOM(){
+    var content = document.body;
+    var miH1 = document.createElement("h1");
+
+    miH1.innerHTML = "Ellos no eligen \n Contra el Maltrato Animal";
+    miH1.style.color = "blue";
+    miH1.style.fontFamily = 'Arial';
+
+    content.appendChild(miH1);
+
+    var i = document.createElement("img");
+       i.setAttribute("src",'http://2.bp.blogspot.com/-Vtp2T6SvPi8/UEoitzZoHuI/AAAAAAAAAFg/W45MGQ0k0qk/s1600/unidos-contra-el-maltrato-animal%5B1%5D.jpg');
+
+       i.style.width= "50px";
+       i.style.heigth = "50px";
+
+      content.appendChild(i);
+
+
+  }
+  </script>
+
+  </head>
+  <body>
+
+
+  </body>
+</html>
