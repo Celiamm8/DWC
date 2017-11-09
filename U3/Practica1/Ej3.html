@@ -25,9 +25,9 @@
 
         }
       function recorreTag(){
-          var cambiarColor=  document.getElementsById("txtColor");
+          var cambiarColor=  document.getElementById("txtColor");
             for (var i = 0; i < document.getElementsByTagName("p").length; i++) {
-               document.getElementsByTagName("p").style.color = cambiarColor.value;
+               document.getElementsByTagName("p")[i].style.color = cambiarColor.value;
             }
       }
 
