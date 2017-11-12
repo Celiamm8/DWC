@@ -5,6 +5,36 @@
     <title>lista</title>
   </head>
   <body>
+    <script type="text/javascript">
+
+            añadirElemento =   function (){
+            var miP = document.createElement("p");
+       var text = document.getElementsByName("texto")[0].value;
+                miP.innerHTML = text;
+                document.body.appendChild(miP);
+                miP.style.color = selector.value;
+                miP.setAttribute("onclick" , " borrarElemento()");
+              }
+
+             borrarElemento =   function(){
+                 var elemento = document.querySelector("p:hover");
+                 elemento.parentNode.removeChild(elemento);
+              }
+
+               borrarLista = function(){
+                var borrar = document.getElementsByTagName("p");
+                 var b = borrar.length;
+                  for (var i = 0; i < b; i++) {
+
+                     document.body.removeChild(borrar[0]);
+
+                  }
+
+
+              }
+
+
+    </script>
     <h1>Lista de la compra</h1>
     <input type="text" name="texto" > </input>
     <select name="selector" id="selector">
@@ -27,66 +57,3 @@
 
   </body>
 </html>
-
-document.getElementsByName("input")
-[]
-var txt= docu
-VM94:1 Uncaught ReferenceError: docu is not defined
-    at <anonymous>:1:10
-(anonymous) @ VM94:1
-var txt= document.getElementsByTagName("input")[0]
-undefined
-txt.value
-""
-txt.value
-""
-document.get
-undefined
-document.gete
-undefined
-document.getElementById("selector")
-<select name=​"selector" id=​"selector">​…​</select>​
-selector
-<select name=​"selector" id=​"selector">​…​</select>​
-selector.value
-"cyan"
-selector.value
-"0"
-document.querySelector("h1")
-<h1>​Lista de la compra​</h1>​
-document.querySelector("h1").style.color = "cyan"
-"cyan"
-document.createEle
-undefined
-document.createElement.("p")
-VM394:1 Uncaught SyntaxError: Unexpected token (
-document.createElement("p")
-<p>​</p>​
-var miP = document.createElement("p")
-undefined
-miP
-<p>​</p>​
-miP.innerHTML = txt.value
-"Pan de 1kg"
-miP
-<p>​Pan de 1kg​</p>​
-miP.innerHTML = "";
-""
-miP
-<p>​</p>​
-var textoCaja = document.createTextNode(txt.value);
-undefined
-textoCaja
-"Pan de 1kg"
-miP.appendChild(textoCaja)
-"Pan de 1kg"
-document.body.appendChild(miP)
-<p>​Pan de 1kg​</p>​
-miP.style.color = selecto.value
-VM836:1 Uncaught ReferenceError: selecto is not defined
-    at <anonymous>:1:19
-(anonymous) @ VM836:1
-miP.style.color = selector.value
-"0"
-miP.style.color = selector.value
-"gold"
