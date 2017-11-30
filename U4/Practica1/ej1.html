@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio 1 </title>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+     var p= document.getElementsByTagName("p")[0];
+        p.addEventListener("mousedown",function(){
+          p.innerHTML="Este parrafo ya no es el mismo";
+        });
+       cambiar.onclick = function(e){
+         e.target.innerHTML="El h2 se ha cambiado";
+       }
+
+       function modificar(e){
+         e.innerHTML="El h1 se ha modificado";
+       }
+        h.oncontextmenu = function (e){
+          e.preventDefault();
+          h.innerHTML="Se ha terminado";
+        }
+
+      </script>
+
+    <p id="parrafo"> Esto es un parrafo</p>
+    <div onmouseover = "this.textContent = 'el div ha cambiado.'">Esto es un div  </div>
+    <h1 onmouseover="modificar(this)">Esto es un h1</h1>
+    <h2 id="cambiar">Esto es un h2</h2>
+    <h3 id="h">Esto es un h3</h3>
+
+  </body>
+</html>

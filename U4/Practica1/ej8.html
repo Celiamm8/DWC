@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio 8 </title>
+  </head>
+  <body>
+      <img src="hardcore.jpg" id="foto" width="150px">
+
+      <script type="text/javascript">
+           addEventListener("DOMContentLoaded", function(){
+             onkeypress = function(e){
+               if (e.key == "+") {
+                 if (foto.width<1000) {
+                   foto.width +=25;
+
+                 }else if(foto.width == 1000){
+                   foto.width +=24
+
+                   }
+
+                 }
+                  if (e.key=="-") {
+                    if(foto.width==1024){
+                      foto.width -=24;
+                    }else if (foto.width>150){
+                      foto.width -=25;
+                    }
+                  }
+
+               }
+
+           });
+
+      </script>
+
+  </body>
+</html>

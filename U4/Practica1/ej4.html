@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio 4</title>
+  </head>
+  <body>
+    <img src="hardcore.jpg" width="250px">
+    <script type="text/javascript">
+         var foto = document.getElementsByTagName('img')[0];
+
+             foto.addEventListener("mouseover",function(e){
+               this.src="hardcore1.jpg"
+             });
+             foto.addEventListener("mouseout",function(e){
+               this.src="hardcore2.jpg"
+             });
+
+    </script>
+  </body>
+</html>

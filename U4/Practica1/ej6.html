@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio 6</title>
+  </head>
+  <body>
+    <p id="parrafo">El texto puede cambiar de mayúsculas a minisculas si puelsas el boton shift</p>
+
+    <script type="text/javascript">
+          var m = 0;
+          addEventListener("DOMContentLoaded", function(){
+            onkeyup = cambiar;
+            function cambiar(e){
+               if(e.key == "shift" && m%2==0){
+                 parrafo.style.textTransform="uppercase";
+                 m++;
+               } else{
+                 parrafo.style.textTransform="lowercase";
+                 m++;
+               }
+            }
+          });
+
+    </script>
+
+  </body>
+</html>

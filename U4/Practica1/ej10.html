@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio 10</title>
+    <style media="screen">
+        img{
+          width: 250px;
+            
+        }
+        *{
+          text-align: center;
+        }
+
+    </style>
+  </head>
+  <body>
+        <img src="hardcore1.jpg"  id="hardcore">
+
+        <select id="s" name="elige">
+          <option value="1" selected= "selected">imagen 1</option>
+          <option value="2">imagen 2</option>
+          <option value="3">imagen 3</option>
+          <option value="4">imagen 4</option>
+     <script type="text/javascript">
+             onload = function(){
+               s.addEventListener("change", c);
+                 function c(){
+                   var img = s.value;
+                   hardcore.src = "hardcore" + s.value + ".jpg";
+                     }
+             }
+
+     </script>
+
+  </body>
+</html>

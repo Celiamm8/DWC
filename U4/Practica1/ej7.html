@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio 7</title>
+  </head>
+  <body>
+     <script type="text/javascript">
+        onload = function(){
+          onkeydown = mostrar;
+          onkeypress = mostrar1;
+          onkeyup = mostrar2
+        }
+
+        var t;
+          function mostrar(e){
+            t = e.altKey || e.ctrlKey || e.shiftKey || e.metakey ;
+
+          }
+
+          function mostrar1(e){
+            miP.innerHTML = "Esta tiene codigo: " + e.keyCode + "La cual es: " + String.fromCharCode(e.charCode) + "<hr>";
+
+          }
+          function mostrar2(e){
+            if (t){
+              console.log(" ASCII " + e.keyCode + " que es: " + e.key + "<hr>");
+            }
+          }
+
+     </script>
+
+  </body>
+</html>
