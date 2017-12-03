@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Escoge el regalo</title>
+    <style media="screen">
+          *{
+            text-align: center;
+                 }
+    div{
+         width: 100px;
+         height: 100px;
+         border: 2px solid black;
+         background-color: lightgray;
+         display: inline-block;
+         text-align: center;
+         padding: 10px;
+         font-size: 24px;
+       }
+       img{
+         width: 100px;
+         height: 100px;
+         display: none
+       }
+
+
+
+
+    </style>
+  </head>
+  <script type="text/javascript">
+         var pista = document.getElementsByClassName('pista');
+          for (var i = 0; i < pista.length; i++) {
+            pista[i].style.display= 'none';
+          }
+
+          function mostrarPista1(){
+            pista[0].style.display= "block";
+          }
+          function mostrarPista2(){
+            pista[1].style.display= "block";
+          }
+          function mostrarPista3(){
+            pista[2].style.display= "block";
+          }
+
+
+      var regalo = document.getElementsByClassName('caja');
+      for (var i = 0; i < regalo.length; i++) {
+        regalo[i].oncontextmenu = function (e){
+          e.preventDefault();
+        }
+      }
+              function mensaje1(){
+                alert(" te has ganado una AUTOCARAVANA");
+              }
+              function mensaje2(){
+                alert("te has ganado un PORTATIL");
+              }
+              function mensaje3() {
+                alert("te has ganado un PIZZA");
+              }
+
+
+
+    var imagen = document.getElementsByTagName('img');
+
+         function mostrarImagen1(){
+           imagen[0].style.display = "block";
+           caja[0].style.display = "none";
+           caja[1].removeEventListener("click", mensaje2);
+           caja[1].addEventListener("click",mensaje1);
+           caja[1].removeEventListener("click", mostrarImagen2);
+           caja[2].removeEventListener("click", mensaje3);
+           caja[2].addEventListener("click", mensaje1);
+           caja[2].removeEventListener("click", mostrarImagen3);
+         }
+
+         function mostrarImagen2(){
+           imagen[1].style.display = "block";
+           caja[1].style.display = "none";
+           caja[0].removeEventListener("click", mensaje1);
+           caja[0].addEventListener("click", mensaje2);
+           caja[0].removeEventListener("click", mostrarImagen1);
+           caja[2].removeEventListener("click", mensaje3);
+           caja[2].addEventListener("click", mensaje2);
+           caja[2].removeEventListener("click", mostrarImagen3);
+
+         }
+
+        function mostrarImagen3(){
+          imagen[2].style.display = "block";
+          caja[2].style.display = "none";
+          caja[0].removeEventListener("click", mensaje1);
+          caja[0].addEventListener("click", mensaje3);
+          caja[0].removeEventListener("click", mostrarImagen1);
+          caja[1].removeEventListener("click", mensaje2);
+          caja[1].addEventListener("click",mensaje3);
+          caja[1].removeEventListener("click", mostrarImagen2);
+
+        }
+
+
+  </script>
+  <body>
+      <h1>Escoge un regalo</h1>
+            <p class="pista 1">Pista:la casa acuestas</p>
+            <p class="pista 2">Pista:me puedo ir a todas partes</p>
+            <p class="pista 3">Pista:mmm que rico</p>
+
+
+
+
+              <div class="caja 1">?</div>
+              <img src="autocaravana.jpg" alt="">
+
+              <div class="caja 2">?</div>
+              <img src="portatil.jpg" alt="">
+
+              <div class="caja 3">?</div>
+              <img src="pizza.jpg" alt="">
+
+
+
+  </body>
+</html>
