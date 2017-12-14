@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Alta</title>
+  </head>
+  <script type="text/javascript">
+
+  function getCookie(nombre) {
+     var nombreq= nombre + "=";
+     var cookie = document.cookie.split(';');
+     for(var i=0;i < cookie.length;i++) {
+       var p = cookie[i];
+       while (p.charAt(0)==' ') p = p.substring(1,p.length);
+         if (p.indexOf(nombreq) == 0) return p.substring(nombreq.length,p.length);
+       }
+       return null;
+     }
+
+onload=function(){
+  var email = localStorage.getItem("Email");
+  var dni = sessionStorage.getItem("Dni");
+       document.body.innerHTML += "<h2>¡Bienvenido " + getCookie('Nombre') + " " + getCookie('Apellido')+" !</h2>";
+       document.body.innerHTML += "<hr>";
+       document.body.innerHTML += "<p> Confirme que su correo es " +  email + " y su dni es " + dni + " . ¡Gracias por registrarse!</p>";
+
+}
+
+  </script>
+  <body>
+
+  </body>
+</html>
