@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').click(function(){ // al iniciar la pagina lo primero que se hace es pulsar el boton porese se hace la funcion
+         $('#imagenes').html('');
+				 for (var j = 0; j < 10; j++) {
+					 var logo = document.createElement('img');
+						 logo.setAttribute('src','cargar.gif');
+						 logo.style.width="150px";
+						 logo.style.height="150px";
+						 imagenes.appendChild(logo);
+
+				 		 }
+  		var valor = $('#selector').val(); //alamcena todo aquello q estan el value.
+			 var url = "https://api.flickr.com/services/feeds/photos_public.gne?tags="; // esta es la url que va escoger
+				url += valor + "&format=json&jsoncallback=?"; // esto es el formato de json esto se hace siempre
+					$.getJSON(url,function(data,st,xhr){// COMO ESTA CN JSON hay que especificarlo. Los datos, el estatus y el xhr a si podemos controlarlo mienda una funcion
+            var arrFotos =data.items;
+						var count = 0;
+             if (st == "success") {
+							 $('#imagenes').html('');
+
+    		$.each(arrFotos,function(i,item){
+							// console.log("imagen nº" + i + "src" + item.media.m) //objeto items tiene el atributo items que a su vez tiene el atributo m
+							if (count<10) {
+
+
+								var imagen = document.createElement('img');
+                imagen.setAttribute('src', item.media.m);
+								 imagen.style.width="150px";
+								 imagen.style.height="150px";
+								 imagenes.appendChild(imagen);
+								 count++;
+								 
+							}else{
+								return false;
+							}
+             });
+					 }else{
+						 alert("error");
+					 }
+
+			});
+
+
+		});
+
+	});
+</script>
+</head>
+<body>
+	 <h1>Mi flickrs</h1>
+	 <div id="imagenes"></div>
+	   <button>dibujar</button>
+		 <select id="selector">
+			 <option value="landscape">Paisajes</option>
+			  <option value="dog">Perros</option>
+				 <option value="island">Isla</option>
+				  <option value="city">Ciudades</option>
+					<option value="lake">lagos</option>
+					<option value="park">parques</option>
+					<option value="iguana">iguana</option>
+
+
+
+		 </select>
+</body>
+</html>
