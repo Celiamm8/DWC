@@ -4,35 +4,16 @@
     <meta charset="utf-8">
     <title>ejercicio 1</title>
     <script type="text/javascript">
-              onload = function(){
-                if (window.XMLHttpRequest) {
-                  var xhr = new XMLHttpRequest();
-                }else if (ActiveXObject("Microsoft.XMLHTTP")){
-                    var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    $(document).ready(function() {
+        var r = Math.floor(Math.random() * (5 - 1)) + 1;
+
+          $.get("n"+ r +".txt",function(datos,st){
+             $("#not").html(datos);
+                 if (st != "sucess") {
+                   alert("Error: " + st);
                 }
-
-
-                  var r = Math.floor(Math.random()* (5-1))+1;
-                  var url = "noticia" +  r + ".txt";
-                  xhr.open("GET",url,true);
-                  xhr.onreadystatechange = resultado;
-                  console.log(r);
-                  xhr.send();
-
-
-                function resultado(){
-                  if (xhr.readyState == 4 && xhr.status == 200) {
-                    not.innerHTML = xhr.responseText ;
-
-
-                  }else if( xhr.readyState == 4 && xhr.status != 200){
-                    alert(xhr.statusText);
-                  }
-
-                }
-
-
-              }
+         });
+        });
     </script>
   </head>
   <body>
