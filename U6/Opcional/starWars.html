@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WikiStarWars</title>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript">
+             $(document).ready(function(){
+               $('#personajes').css('display','none');
+               $('#peliculas').css('display','none');
+               $('#naves').css('display','none');
+               $('#planetas').css('display','none');
+
+
+                $('#documentacion').change(function(){
+
+
+                  var valor = $('#documentacion').val();
+                  if (valor == 'people') {
+                    $('#personajes').css('display','block');
+                    $('#peliculas').css('display','none');
+                    $('#naves').css('display','none');
+                    $('#planetas').css('display','none');
+
+
+                  }else if (valor == 'films') {
+                    $('#peliculas').css('display','block');
+                    $('#personajes').css('display','none');
+                    $('#naves').css('display','none');
+                    $('#planetas').css('display','none');
+
+
+                  }else if (valor == 'starShips') {
+                    $('#naves').css('display','block');
+                    $('#peliculas').css('display','none');
+                    $('#personajes').css('display','none');
+                    $('#planetas').css('display','none');
+
+
+                  }else if (valor== 'planets'){
+                      $('#planetas').css('display','block');
+                      $('#peliculas').css('display','none');
+                      $('#naves').css('display','none');
+                      $('#personajes').css('display','none');
+
+
+                  }
+                  var url = "https://swapi.co/api/" + valor;
+
+                  $.getJSON(url,function(data,st,xhr){
+
+                       $('#caracteristicas').empty();
+
+                    var logo = document.createElement('img');
+                     logo.setAttribute('src','cargar.gif');
+                     logo.style.width="150px";
+                     logo.style.height="150px";
+                     caracteristicas.appendChild(logo);
+
+
+
+
+
+                    var mostrar = $('<ul/>');
+                    caracteristicas.append(mostrar);
+                    var texto = "";
+                    var objeto = data.results;
+                    $.each(objeto,function(i,item){
+                      if (valor == 'films') {
+                        data.results[i].title;
+                      }else if(valor == 'planets'){
+                        data.results[i].name;
+                      }else if(valor == 'starShips'){
+                        data.results[i].name;
+                      }else if(valor == 'people'){
+                        data.results[i].name;
+                      }
+
+                      if (valor == 'people' ) {
+                        var mostrar1 = $('<li/>');
+                        texto += data.results[i].name + data.results[i].gender + data.results[i].height + data.results[i].mass ;
+                        mostrar.append(mostrar1);
+                        $('li').text(texto);
+
+
+                      }
+
+                    });
+
+                  });
+                });
+             });
+
+    </script>
+  </head>
+  <body>
+    <h1> Wiki StarWars</h1>
+      <select id="documentacion">
+        <option value="none">Elige una opcion</option>
+        <option value="people">Personajes</option>
+        <option value="films">Peliculas</option>
+        <option value="starShips">Naves</option>
+        <option value="planets">Planetas</option>
+
+      </select>
+
+      <select id="personajes">
+        <option value="Luke Skywalker">Luke Skywalker</option>
+        <option value="Anakin Skywalker">Anakin Skywalker</option>
+        <option value="Amidala">Amidala</option>
+        <option value="leia Skywalker">Leia Skywalker</option>
+
+      </select>
+      <select id="peliculas">
+        <option value="A new Hope">A new hope</option>
+        <option value="Attack of clones">Attack of the clones</option>
+        <option value="The Phantom Menace">The Phantom Menace</option>
+        <option value="Return of the Jedi">Return of the Jedi</option>
+
+      </select>
+
+      <select id="naves">
+        <option value="executor">executor</option>
+        <option value="Death Star">Death Star</option>
+        <option value="Millenium Falcon">Millenium Falcon</option>
+        <option value="Y-wing">Y-wing</option>
+
+      </select>
+      <select id="planetas">
+        <option value="alderaan">alderaan</option>
+        <option value="Yavin IV">Yavin IV</option>
+        <option value="Hoth">Hoth</option>
+        <option value="Bespin">Bespin</option>
+
+      </select>
+      <div id="caracteristicas">
+
+      </div>
+
+
+
+  </body>
+</html>
